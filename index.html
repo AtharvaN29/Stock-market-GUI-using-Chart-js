@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Replica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!--Header-->
+
+    <div class="flex flex-grow-1 p-1" id="header">
+        <div class="flex basis-1/6">
+            <img src="images\BSE.png">
+        </div>
+        <div class="flex basis-4/6 justify-center ">
+            <!-- <div class="flex justify-center items-center mx-5">
+                <p class="text-2xl">Mission time</p>
+            </div> -->
+            <div class="flex justify-center items-center mx-5">
+                <p class="font-bold text-4xl">BSE official</p>
+            </div>
+            <div class=" flex justify-center items-center mx-5">
+                <p class="font-bold text-2xl">my id:1234</p>
+            </div>
+        </div>
+        <div class="flex basis-1/6 justify-end">
+            <img src="images\indian flag.jpeg">
+        </div>
+    </div>
+
+    <!--InfoBar-->
+
+    <div class="flex flex-grow-1 p-3  bg-blue-700 rounded-md mx-2 shadow-md" id="Infobar">
+        <div class="flex-row  justify-center items-center">
+            <div class="flex justify-center items-center">
+                <div class="flex text-white justify-end text-center flex-shrink-1 p-1">
+                    <i class="fa fa-stopwatch fa-2x p-2"></i>
+                    <b class="text-lg font-medium">Indian Standard Time</b>
+                </div>
+                <div class="flex justify-center items-center bg-green-200 rounded-md border-2 border-black shadow-md p-2 w-1/2 hover:MyAnimation">
+                    <div class="px-1 text-black font-bold text-xl" >
+                        <span id="TimeHRS"></span>h
+                    </div>
+                    <div class="px-1 text-black font-bold text-xl">
+                        <span id="TimeMIN"></span>m
+                    </div>
+                    <div class="px-1 text-black font-bold text-xl">
+                        <span id="TimeSEC"></span>s
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex  justify-center items-center">
+            <div class="flex basis-3/10 font-medium text-white text-lg p-1">
+                Today's Prediction
+            </div>
+            <div class="flex basis-3/10 border-2 border-black rounded-md bg-green-200 font-medium text-xl text-black p-2">
+                Mazda:high
+            </div>
+            <div class="flex basis-1/10">
+                <i class="fa fa-arrow-right fa-2x"></i>
+            </div>
+            <div class="flex basis-3/10 border-2 border-black rounded-md bg-green-200 font-medium text-xl text-black p-2">
+                Mazda:low
+            </div>
+        </div>
+        <div class="flex  justify-center items-center">
+            <div class="text-white text-xl my-2 font-medium text-right">
+                Todays Trades
+            </div>
+            <div class="flex justify-center items-center text-center bg-green-200 rounded-md border-2 ml-2 border-black shadow-md p-2 px-7 w-1/2 hover:MyAnimation">
+                <div class="text-black font-bold text-xl px-6" id="PacketCount">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="flex  justify-center items-center">
+            <div class="flex justify-center items-center mx-3">
+                <i class="fa fa-circle-play fa-3x hover:MyAnimation"></i>
+            </div>
+            <div class="flex justify-center items-center mx-3">
+                <i class="fa fa-circle-stop fa-3x hover:MyAnimation"></i>
+            </div>
+            <div class="flex justify-center items-center mx-3">
+                <i class="fa fa-arrows-rotate fa-3x hover:MyAnimation"></i>
+            </div>
+        </div>
+    </div>
+
+    <!--Content-->
+
+    <div class="flex flex-row-reverse m-1 mx-2 pr-3" id="content">
+        <div class="flex-row basis-1/2 mt-1">
+            <div class="flex  height25">
+                <div class=" bg-blue-700 flex justify-center items-center rounded-md basis-1/4 m-1">
+                    <div class="bg-blue-700 text-white p-1 px-6 text-xl font-medium  hover:bg-green-200 hover:text-black">
+                        <p class="border-b-2 border-black">TATA</p>
+                        <hr>
+                        <p>980.23</p>
+                    </div>
+                </div>
+                <div class="flex bg-blue-700 justify-center items-center rounded-md basis-1/4 m-1">
+                    <div class=" bg-blue-700 text-white p-1 px-8 text-xl font-medium  hover:bg-green-200 hover:text-black">
+                        <p class="border-b-2 border-black">IREDA</p>
+                        <hr>
+                        <p>230.33</p>
+                    </div>
+                </div>
+                <div class="flex bg-blue-700 justify-center items-center rounded-md basis-1/4 m-1">
+                    <div class=" bg-blue-700 text-white p-1 px-7 text-xl font-medium  hover:bg-green-200 hover:text-black">
+                        <p class="border-b-2 border-black">ADANI</p>
+                        <hr>
+                        <p>430.23</p>
+                    </div>
+                </div>
+                <div class="flex bg-blue-700 justify-center items-center rounded-md basis-1/4 m-1">
+                    <div class=" bg-blue-700 text-white p-1 px-2 text-center text-xl font-medium  hover:bg-green-200 hover:text-black">
+                        <p class="border-b-2 border-black">NIFTY</p>
+                        <hr>
+                        <p>1230.98</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex height25 flex-grow-1">
+                <div class="flex bg-blue-700 justify-center items-center rounded-md basis-1/4 m-1">
+                    <div class=" bg-blue-700 text-white p-1 px-3 text-xl font-medium text-center  hover:bg-green-200 hover:text-black">
+                        <p class="border-b-2 border-black">SENSEX</p>
+                        <hr>
+                        <p>3482.22</p>
+                    </div>
+                </div>
+                <div class="flex bg-blue-700 justify-center items-center rounded-md basis-1/4 m-1">
+                    <div class=" bg-blue-700 text-white p-1 px-2 pr-3 text-center text-xl font-medium  hover:bg-green-200 hover:text-black">
+                        <p class="border-b-2 border-black">TRINITY</p>
+                        <hr>
+                        <p>-22.47</p>
+                    </div>
+                </div>
+                <div class="flex bg-blue-700 justify-center items-center rounded-md basis-1/4 m-1">
+                    <div class=" bg-blue-700 text-white p-1 px-7 pr-8text-center text-xl font-medium  hover:bg-green-200 hover:text-black">
+                        <p class="border-b-2 border-black">OPEL</p>
+                        <hr>
+                        <p>44.23</p>
+                    </div>
+                </div>
+                <div class="flex bg-blue-700 justify-center items-center rounded-md basis-1/4 m-1">
+                    <div class=" bg-blue-700 text-white p-1 px-7 text-center text-xl font-medium  hover:bg-green-200 hover:text-black">
+                        <p class="border-b-2 border-black">WALMART</p>
+                        <hr>
+                        <p>9730.2</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex height25 flex-grow-1">
+                <div class="flex bg-blue-700 justify-center items-center rounded-md basis-1/4 m-1">
+                    <div class=" bg-blue-700 text-white p-1 px-7 pr-9 text-xl font-medium  hover:bg-green-200 hover:text-black">
+                        <p class="border-b-2 border-black">GOLD</p>
+                        <hr>
+                        <p>55,234.00</p>
+                    </div>
+                </div>
+                <div class="flex bg-blue-700 justify-center items-center rounded-md basis-1/4 m-1">
+                    <div class=" bg-blue-700 text-white p-1 px-9 text-xl font-medium  hover:bg-green-200 hover:text-black">
+                        <p class="border-b-2 border-black">SILVER</p>
+                        <hr>
+                        <p>1200</p>
+                    </div>
+                </div>
+                <div class="flex bg-blue-700 justify-center items-center rounded-md basis-1/4 m-1">
+                    <div class=" bg-blue-700 text-white p-1 px-10 text-xl font-medium  hover:bg-green-200 hover:text-black">
+                        <p class="border-b-2 border-black">HILTON</p>
+                        <hr>
+                        <p>21.44</p>
+                    </div>
+                </div>
+                <div class="flex bg-blue-700 justify-center items-center rounded-md basis-1/4 m-1">
+                    <div class=" bg-blue-700 text-white p-1 px-8 text-xl font-medium  hover:bg-green-200 hover:text-black">
+                        <p class="border-b-2 border-black">JULES</p>
+                        <hr>
+                        <p>870.11</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex basis-1/2 ">
+            <div class="flex-row basis-1/3 heightMAX bg-blue-700 rounded-lg">
+                <div class="flex-row justify-center items-center text-center text-white basis-2/3 h-1/2 p-2">
+                    <div class="ml-2">
+                        <div class="flex font-medium text-white text-lg text-center ml-12">
+                            PLACE ORDER
+                         </div>
+                         <div class="flex border-2 rounded-sm border-black ">
+                            <form>
+                              <input type="text" placeholder="Enter command">
+                            </form>
+                         </div>
+                         <div class="flex font-medium justify-center items-center text-black my-1">
+                              <button class="bg-green-200 border-2 border-black px-3">Enter</button>
+                         </div>
+                    </div>
+                    <div class="flex justify-center items-center my-1">
+                        <p class="font-medium text-xl mx-2">Set StopLoss</p>
+                        <i class="fa fa-toggle-on fa-3x"></i>
+                     </div>
+                </div>
+                <div class="flex justify-center items-center text-white basis-1/3  h-1/2 p-2">
+                    Quick Updates:Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae quas voluptas odio minus optio ipsum illum, corporis rat
+                </div>
+            </div>
+            <div class="flex-row basis-2/3 heightMAX">
+                <div class="flex justify-center items-center basis-1/6 h-1/6 font-medium text-lg ">
+                    <div class="bg-blue-700 rounded-md p-2 text-white"> 
+                        <span class="border-r-2 border-white"> Latitude:19.16</span> <span class="pl-1 border-r-2 border-white">Longitude:72.903 </span> <span class="pl-1">Altitude:12.94</span>
+                    </div>
+                </div>
+                <div class="flex justify-center items-center basis-4/6 h-4/6 px-3 py-1">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60303.237957180834!2d72.9240144721596!3d19.153561990779878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b8edba39322f%3A0x80da2c634844abaf!2sMulund%20East%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700407245064!5m2!1sen!2sin" width="90%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="flex justify-center items-center basis-1/6 h-1/6 p-2 font-medium text-lg text-white">
+                    <div class="bg-blue-700 rounded-md"> 
+                        <span class="pl-1 px-10">Bombay Stock Exchange,Dalal Street,Mumbai</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Graphs & CSV--> 
+    
+    <div class="font-bold flex justify-center items-center my-3 bg-blue-700 rounded-md mx-2" id="selector">
+        <div class="mr-5">
+            <span class=" border-2 rounded-md text-white font-medium  border-white mx-3 py-1 px-2 hover:bg-green-200 hover:text-black">
+                <a href="#dataREP">Graph</a>
+            </span>
+            <span class=" border-2 rounded-md text-white font-medium border-white mx-3 py-1 px-2 hover:bg-green-200 hover:text-black hover:border-black">
+                <a href="#CSV">Buy orders</a>
+            </span>
+            <span class=" border-2 rounded-md text-white font-medium border-white mx-3 py-1 px-2 hover:bg-green-200 hover:text-black">
+                <a href="#CSV2">Sell orders</a>
+            </span>
+        </div>
+        <div class="ml-3">
+            <div class="flex-row height25 flex-grow-1 px-2 bg-blue-700 rounded-md mx-3">
+                <div class="flex items-baseline ml-2">
+                    <span class="font-medium text-lg text-white">0min</span>
+                    <i class="fa fa-caret-down mr-3"></i>
+                    <span class="font-medium text-lg text-white ml-12">5min</span>
+                    <i class="fa fa-caret-down mr-4"></i>
+                    <span class="font-medium text-lg text-white  ml-12">7min</span>
+                    <i class="fa fa-caret-down mr-2"></i>
+                    <span class="font-medium text-lg text-white  ml-12">10min</span>
+                    <i class="fa fa-caret-down mr-2"></i>
+                    <span class="font-medium text-lg text-white  ml-12">15min</span>
+                    <i class="fa fa-caret-down mr-2"></i>
+                    <span class="font-medium text-lg text-white  ml-12">20min</span>
+                    <i class="fa fa-caret-down"></i>
+                </div>
+                <div class="flex justify-center items-center w-full ml-2">
+                    <i class="fa fa-circle-dot"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-circle-dot"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-circle-dot"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-circle-dot"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-circle-dot"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-grip-lines"></i>
+                    <i class="fa fa-circle-dot"></i>
+                </div>
+                <div class="flex">
+                    <span class="font-medium text-md text-white">BUY10</span>
+                    <i class="fa fa-caret-up p-1"></i>
+                    <span class="font-medium text-md ml-9 text-white">SOLD20</span>
+                    <i class="fa fa-caret-up p-1"></i>
+                    <span class="font-medium text-md ml-2 text-white">HOLD_2134</span>
+                    <i class="fa fa-caret-up p-1"></i>
+                    <span class="font-medium text-md ml-2 text-white">FALL_DLR</span>
+                    <i class="fa fa-caret-up p-1"></i>
+                    <span class="font-medium text-md ml-3 text-white">PRD_UPPR</span>
+                    <i class="fa fa-caret-up p-1"></i>
+                    <span class="font-medium text-md ml-9 text-white">BUY100</span>
+                    <i class="fa fa-caret-up p-1"></i>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="flex-row justify-center items-center" id="dataREP">
+        <div class="flex">
+            <div class="flex heightMAX justify-center items-center border-2 basis-2/4 rounded-md border-blue-800 p-1 mx-2" >
+                <canvas id="TempGraph"></canvas>
+            </div>
+            <div class="flex heightMAX justify-center items-center border-2 basis-2/4 rounded-md border-blue-800 p-1 mx-2">
+                <canvas id="PressureGraph"></canvas>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="px-3 my-4" id="CSV">
+        <table>
+            <tr>
+                <th>Mission_time</th>
+                <th>Team_id</th>
+                <th>Packet_count</th>
+                <th>Mode</th>
+                <th>State</th>
+                <th>Altitude</th>
+                <th>Airspeed</th>
+                <th>HS_deployed</th>
+                <th>PC_DEPLOYED</th>
+                <th>Temperature</th>
+                <th>Pressure</th>
+                <th>Voltage</th>
+                <th>GPS_TIME</th>
+                <th>GPS_ALTITUDE</th>
+                <th>GPS_LATITUDE</th>
+                <th>GPS_LONGITUDE</th>
+                <th>GPS_SATS</th>
+                <th>TILT_X</th>
+                <th>TILT_Y</th>
+                <th>ROT_Z</th>
+                <th>CMD_ECHO</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="px-3 my-4" id="CSV2">
+        <table>
+            <tr>
+                <th>Mission_time</th>
+                <th>Team_id</th>
+                <th>Packet_count</th>
+                <th>Mode</th>
+                <th>State</th>
+                <th>Altitude</th>
+                <th>Airspeed</th>
+                <th>HS_deployed</th>
+                <th>PC_DEPLOYED</th>
+                <th>Temperature</th>
+                <th>Pressure</th>
+                <th>Voltage</th>
+                <th>GPS_TIME</th>
+                <th>GPS_ALTITUDE</th>
+                <th>GPS_LATITUDE</th>
+                <th>GPS_LONGITUDE</th>
+                <th>GPS_SATS</th>
+                <th>TILT_X</th>
+                <th>TILT_Y</th>
+                <th>ROT_Z</th>
+                <th>CMD_ECHO</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="script.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js" charset="utf-8"></script>
+    <script src="plotly-2.27.0.min.js" charset="utf-8"></script>
+</body>
+</html>

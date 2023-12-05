@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .MyAnimation{
+        transition: transform .2s;
+    }
+    .hover\:MyAnimation:hover{
+        transform: scale(1.1);
+    }
+}
+/* IMAGES */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+#header{
+    height: 70px;
+    width: 100%;
+}
+
+#selector{
+    height: 75px;
+    width: 100%;
+}
+
+#content{
+    height: 300px;
+    width: 100%;
+    box-shadow: 1 rem;
+}
+
+#InfoBar{
+    max-height: 60px;
+    width: 100%;
+}
+
+#dataREP{
+    height:320px;
+}
+
+/* ICONS */
+.fa-caret-up{
+    color:white;
+}
+.fa-caret-down{
+    color:white;
+}
+.fa-circle-dot{
+    color:white;
+}
+.fa-grip-lines{
+    color:white;
+}
+
+.fa-toggle-on{
+    color:rgb(187 247 208);
+}
+
+.fa-circle-play{
+    color:rgb(187 247 208);
+}
+
+.fa-circle-stop{
+    color:rgb(187 247 208);
+}
+
+.fa-arrows-rotate{
+    color:rgb(187 247 208);
+}
+
+.fa-arrow-right{
+    color:white;
+}
+
+.fa-stopwatch{
+    color:rgb(187 247 208);
+}
+
+.height25{
+    height: 33%;
+}
+
+.heightMAX{
+    height: 100%;
+}
+
+.MyAnimation{
+    transition: transform .2s;
+}
+
+.MyAnimation::hover{
+    transform: scale(1.5);
+    background-color: black;
+}
+
+/* OTHER CSS */
+
+/* body {
+    overflow-x: hidden;
+} */
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+#graph3D{
+    height: 400px;
+}
+
+th{
+    font-size:13px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 1px;
+}
+
+tr:nth-child(even) {
+    background-color: #D6EEEE;
+}
+
+#myDiv{
+    padding:-1px;
+}
